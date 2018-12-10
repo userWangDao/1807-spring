@@ -1,1 +1,71 @@
-hi!
+﻿配置身份信息:
+git config --global user.name "userWangDao"
+git config --global user.email "The_simpleton@163.com"
+
+查看配置信息
+git config --list
+
+创建本地仓库
+ mkdir git_repository					#创建目录
+ cd git_repository					#进入目录
+
+在本地仓库中克隆远程仓库stu(这是自己在网上创建的仓库)
+git clone https://github.com/userWangDao/stu.git
+
+初始化本地stu
+ cd stu							#创建本地仓库
+ git init						#创建本地仓库
+
+推送到远程仓库
+ git add .						#添加当前目录下文件
+ git commit -m "jttest"					#提交，设置备注
+
+关联本地目录到远程仓库
+git remote add stu git://github.com/userWangDao/stu
+
+推送更新到远程仓库
+ git push -u origin master		#推送到远程仓库master默认分支，第一次需要登录，比较慢，弹出登录框输入用户名和密码。
+
+检出
+ git checkout .					#进入某个仓库检出当前仓库所有文件
+ git checkout hello.txt			        #检出远程仓库最后的版本覆盖本地文件
+
+拉取
+ cd stu						#进入到要管理的目录中
+ git pull					#从服务器拉取最新内容
+
+------------------------------------------
+创建hi.txt
+$ git add hi.txt				#增加文件到暂存区
+$ git add ./*					#批量暂存当前目录下所有内容
+$ git status					#查看文件状态
+$ git commit -m "test"				#提交，提交文件到本地仓库
+[master (root-commit) e522732] test
+ 1 file changed, 1 insertion(+)
+create mode 100644 hi.txt
+$ git status					#查看文件状态
+-----------------------------------------
+
+-----------------------------------------
+$ git log
+commit e522732d94c440fdd750368ce937ac1c40dbd2ed	#本次提交唯一标识，对于版本回退非常有用
+Author: nutony <52399178@qq.com>
+Date:   Fri Jun 2 09:39:31 2017 +0800
+
+test
+-----------------------------------------
+
+-----------------------------------------
+$ rm *.jpg					#删除所有jpg结尾，删除本地文件
+$ ll
+$ git add .
+$ git commit -m 'rm'
+$ git push origin master
+
+-----------------------------------------
+
+
+
+
+
+
